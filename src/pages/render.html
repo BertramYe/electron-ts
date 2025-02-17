@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 解决网页内容安全策略问题 CSP Content-Security-Policy -->
+    <!--  当然你也可以定义只信任某个域名的内容 -->
+    <!-- 具体参考： https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP -->
+    <!-- 具体参考： https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP -->
+    <!--  以下表示： 一个网站管理者想要所有内容均来自站点的同一个源（不包括其子域名）。 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="./render.css">
+</head>
+<body>
+    <div class="tip">
+        hello, this is the Home page !!!
+    </div>
+    <button id="test">click</button>
+
+    <div>
+        <input type="text" id="inputValue">
+        <button id="createBtn">create file</button>
+    </div>
+    <div>
+        <button id="readBtn">read file</button>
+    </div>
+
+    <!-- 这里一定要指定为编译完成后的 js 文件，而不能时 ts 文件 -->
+    <script  src="../../dist/pages/render.js"></script>
+</body>
+</html>

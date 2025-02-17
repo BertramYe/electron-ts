@@ -1,0 +1,89 @@
+{
+  "name": "electron-ts",
+  "version": "1.0.0",
+  "description": "a learning template of the electron with the pure ts",
+  "keywords": [
+    "eletron",
+    "typescript",
+    "template"
+  ],
+  "homepage": "https://github.com/BertramYe/electron-ts#readme",
+  "bugs": {
+    "url": "https://github.com/BertramYe/electron-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BertramYe/electron-ts.git"
+  },
+  "license": "MIT",
+  "author": "BertramYe",
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc && electron-builder",
+    "dev": "tsc &&  nodemon --exec  electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.electron.ts",
+    "productName": "electron-ts",
+    "icon": "./asset/log.png",
+    "directories": {
+      "buildResources": "./dist",
+      "output": "release"
+    },
+    "asar": true,
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": false,
+      "runAfterFinish": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./asset/log.png"
+    },
+    "dmg": {
+      "title": "eletron-ts",
+      "background": "./asset/log.png",
+      "iconSize": 100,
+      "format": "ULFO",
+      "window": {
+        "x": 400,
+        "y": 300,
+        "width": 600,
+        "height": 400
+      }
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "./asset/log.png",
+      "maintainer": "BertramYe <bertramyerik@gmail.com>",
+      "category": "Utility",
+      "compression": "maximum"
+    },
+    "files": [
+      "./dist/**/*",
+      "./src/pages/*.html",
+      "./src/pages/*.css",
+      "./asset/log.png"
+    ]
+  },
+  "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/node": "^22.13.4",
+    "chardet": "^2.0.0",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.7.3"
+  }
+}

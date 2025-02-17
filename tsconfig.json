@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                      // 设置编译目标为 ES6
+      "module": "CommonJS",                      // 使用 CommonJS/ES6 模块 模块
+      "strict": true,                        // 启用严格模式
+      "esModuleInterop": true,               // 使得 CommonJS 与 ES Module 兼容
+      "skipLibCheck": true,                  // 跳过库文件检查，提高编译速度
+      "outDir": "./dist",                    // 编译后的 JavaScript 输出目录
+      "rootDir": "./src",                    // TypeScript 源代码目录
+      "baseUrl": ".",                        // 基本路径
+      "resolveJsonModule": false,              // 允许导入 .json 文件
+      "paths": {
+        "*": ["node_modules/*"]
+      }
+    },
+    "include": [
+      "src/**/*"                             // 包含 src 目录下的所有文件
+    ]
+}
